@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css" />
+<title>Love Scan ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:hsl(0, 1%, 58%);
+    font-family:Arial;
+}
+
+.container{
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
+
+.text{
+    position:absolute;
+    color:#ff9ad5;
+    font-size:32px;
+    font-weight:bold;
+    white-space:nowrap;
+    text-shadow:
+        0 0 10px hotpink,
+        0 0 20px hotpink,
+        0 0 30px hotpink;
+    animation:move 15s linear infinite;
+}
+
+@keyframes move{
+from{
+transform:translateX(120vw);
+}
+to{
+transform:translateX(-120vw);
+}
+}
+
+.heart{
+position:absolute;
+color:rgb(239, 124, 124);
+font-size:40px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+  <script src="java.js"></script>
+
+<div class="container" id="bg"></div>
+
+<script>
+
+const bg=document.getElementById("bg");
+
+for(let i=0;i<40;i++){
+
+let t=document.createElement("div");
+t.className="text";
+t.innerHTML="Semangat Ngejar Cita-Cita dan Karirnya yaa!!! ❤️";
+
+t.style.top=Math.random()*100+"%";
+t.style.left=Math.random()*100+"%";
+t.style.animationDuration=(10+Math.random()*10)+"s";
+t.style.fontSize=(18+Math.random()*35)+"px";
+
+bg.appendChild(t);
+
+}
+
+for(let i=0;i<80;i++){
+
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+h.style.animationDelay=Math.random()*5+"s";
+h.style.fontSize=(20+Math.random()*40)+"px";
+
+bg.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
